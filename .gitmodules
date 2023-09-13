@@ -1,0 +1,9 @@
+[submodule "googletest"]
+	path = googletest
+	url = https://github.com/google/googletest/
+	branch = v1.13.x
+	
+[submodule "6homework"]
+	path = 6homework
+	url = git@github.com:alyoshina/6homework.git
+	branch = dev

@@ -80,9 +80,16 @@ TYPED_TEST(ContainerFixture, Container_get_size) {
     EXPECT_EQ(this->container.size(), this->elementsCount);
 }
 
-TYPED_TEST(ContainerFixture, Container_copy) {
+TYPED_TEST(ContainerFixture, Container_copy_with_assign_operator) {
     TypeParam container_copy;
     container_copy = this->container;
+    for (std::size_t i = 0; i < this->elementsCount; ++i) {
+        EXPECT_EQ(this->container[i], container_copy[i]);
+    }
+}
+
+TYPED_TEST(ContainerFixture, Container_copy_with_copy_constructor) {
+    TypeParam container_copy(this->container);
     for (std::size_t i = 0; i < this->elementsCount; ++i) {
         EXPECT_EQ(this->container[i], container_copy[i]);
     }
